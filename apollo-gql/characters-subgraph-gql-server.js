@@ -12,11 +12,7 @@ const fetch = require('node-fetch');
 // =================
 
 const typeDefs = gql`
-  extend schema
-    @link(
-      url: "https://specs.apollo.dev/federation/v2.1"
-      import: ["@key", "@shareable"]
-    )
+  extend schema @link(url: "https://specs.apollo.dev/federation/v2.1", import: ["@key", "@shareable"])
 
   # shared type
   type VehicleUrl @shareable {
@@ -59,7 +55,5 @@ const server = new ApolloServer({
 // start / turn-on the server
 // =================
 startStandaloneServer(server, { listen: { port } }).then(({ url }) => {
-  console.log(
-    `The graphql server containing the Character subgraph is ready at http://localhost:${port}`
-  );
+  console.log(`The graphql server containing the Character subgraph is ready at http://localhost:${port}`);
 });

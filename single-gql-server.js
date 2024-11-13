@@ -5,31 +5,31 @@ Instructions:
 - Create the following queries using the REST endpoints specified below.
 
 query starwarsCharacterById(id: Int) {
-    id
-    name
-    gender
-    films {
-        id
-        title
-        episodeId
-        characters {
-            id
-            name
-            gender
-        }
-    }
-}
-
-query starwarsFilmById(id: Int) {
+  id
+  name
+  gender
+  films {
     id
     title
     episodeId
-    director
     characters {
-        id
-        name
-        gender
+      id
+      name
+      gender
     }
+  }
+}
+
+query starwarsFilmById(id: Int) {
+  id
+  title
+  episodeId
+  director
+  characters {
+    id
+    name
+    gender
+  }
 }
 
 ----------------------
@@ -60,13 +60,13 @@ const resolvers = {};
 const port = 4000;
 
 const server = new ApolloServer({
-    typeDefs,
-    resolvers,
+  typeDefs,
+  resolvers,
 });
 
 // =================
 // start / turn-on the server
 // =================
 startStandaloneServer(server, { listen: { port } }).then(({ url }) => {
-    console.log(`The pure graphql server is ready at http://localhost:${port}`);
+  console.log(`The pure graphql server is ready at http://localhost:${port}`);
 });

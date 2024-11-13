@@ -1,0 +1,20 @@
+{
+  "name": "gql-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@apollo/gateway": "^2.9.3",
+    "@apollo/server": "^4.11.2",
+    "@apollo/subgraph": "^2.9.3",
+    "axios": "^1.7.7",
+    "graphql-tag": "^2.12.6",
+    "node-fetch": "^2.7.0"
+  }
+}
